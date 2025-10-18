@@ -20,7 +20,7 @@ class ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       margin: const EdgeInsets.all(20),
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -28,30 +28,26 @@ class ProfileCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CircleAvatar(radius: 40, backgroundImage: NetworkImage(imageUrl)),
-            const SizedBox(height: 16),
-            Text(
-              name,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
+            const SizedBox(height: 15),
+            Text(name, style: Theme.of(context).textTheme.titleLarge),
             Text(
               position,
-              style: const TextStyle(color: Colors.grey, fontSize: 16),
+              style: TextStyle(color: Theme.of(context).colorScheme.primary),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.email, size: 16, color: Colors.blue),
-                const SizedBox(width: 4),
+                const Icon(Icons.email, size: 18),
+                const SizedBox(width: 8),
                 Text(email),
               ],
             ),
-            const SizedBox(height: 6),
             Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.phone, size: 16, color: Colors.green),
-                const SizedBox(width: 4),
+                const Icon(Icons.phone, size: 18),
+                const SizedBox(width: 8),
                 Text(phoneNumber),
               ],
             ),
